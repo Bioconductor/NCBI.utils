@@ -7,10 +7,10 @@
     api.url <- "https://api.ncbi.nlm.nih.gov/datasets/v2alpha"
     url <- paste0(api.url, "/genome/accession/GCF_000008865.2/sequence_reports")
     response <- httr::GET(url)
-    json_string <- content(response, as="text", encoding="UTF-8")
+    json_string <- httr::content(response, as="text", encoding="UTF-8")
     jsonlite::fromJSON(json_string)$reports
 
-  Compare with fetch_assembly_report("GCF_000008865.2").
+  Compare with GenomeInfoDb::fetch_assembly_report("GCF_000008865.2").
   Note that the returned data frames have different colnames.
 
   WARNING: As of 2024/04/01 the API is still in alpha e.g. some things don't
@@ -18,5 +18,5 @@
 
     headers <- httr::add_headers("Accept"="text/tab-separated-values")
     response <- httr::GET(url, headers)
-    content(response, as="text", encoding="UTF-8")  # returns "\n\n\n\n"
+    httr::content(response, as="text", encoding="UTF-8")  # returns "\n\n\n\n"
 
