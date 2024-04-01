@@ -1,0 +1,18 @@
+Package: NCBI.utils
+Title: Low-level utilities to retrieve data from NCBI
+Description: A set of low-level utilities to retrieve data from NCBI.
+	Note that the primary purpose of the package is to support
+	higher-level functionalities implemented in downstream packages
+	like GenomeInfoDb or BSgenomeForge.
+biocViews: Infrastructure, GenomeAssembly, Annotation, GenomeAnnotation,
+	DataImport
+URL: https://bioconductor.org/packages/NCBI.utils
+BugReports: https://github.com/Bioconductor/NCBI.utils/issues
+Version: 0.0.0
+License: Artistic-2.0
+Encoding: UTF-8
+Authors@R: person("Hervé", "Pagès", role=c("aut", "cre"),
+	          email="hpages.on.github@gmail.com")
+Imports: methods, stats, httr, rjson, S4Vectors
+Suggests: GenomeInfoDb, testthat, knitr, rmarkdown, BiocStyle
+VignetteBuilder: knitr
